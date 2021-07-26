@@ -1,0 +1,7 @@
+wandb==0.10.19
+gpytorch==1.4.2
+torchvision==0.10.0
+jax==0.2.17
+botorch==0.4.0
+numpy==1.18.5
+torch==1.9.0
