@@ -1,5 +1,5 @@
 """
-2nd order Taylor Polynomial Approximations of
+Taylor Polynomial Approximations of
 1. SiLU
 2. ReLU
 
