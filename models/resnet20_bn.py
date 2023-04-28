@@ -130,7 +130,7 @@ class ResNet20(nn.Module):
         print("self.act{} is now        : {}".format(layer, getattr(self, "act" + str(layer))))
 
     def change_all_activations(self, new_activation):
-        for layer in range(17):
+        for layer in range(19):
             setattr(self, "act" + str(layer), new_activation)
 
     def get_l2_norm(self):
