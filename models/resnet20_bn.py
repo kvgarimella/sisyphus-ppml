@@ -101,11 +101,10 @@ class ResNet20(nn.Module):
         self.convL18_     = nn.Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         self.bnL18_       = nn.BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         self.act18        = nn.ReLU()
+        self.avgpoolL18_  = nn.AdaptiveAvgPool2d(output_size=(1,1))
 
-        self.avgpoolL19_  = nn.AdaptiveAvgPool2d(output_size=(1,1))
 
-
-        self.linearL20_   = nn.Linear(in_features=64, out_features=num_classes, bias=True)
+        self.linearL19_   = nn.Linear(in_features=64, out_features=num_classes, bias=True)
         self.flatten      = nn.Flatten()
 
     def freeze_all(self):
@@ -269,11 +268,11 @@ class ResNet20(nn.Module):
         x = x + skip
         x = self.act18(x)
         out.append(x.clone())
-        x = self.avgpoolL19_(x)
+        x = self.avgpoolL18_(x)
 
         x = self.flatten(x)
 
-        x = self.linearL20_(x)
+        x = self.linearL19_(x)
         out.append(x)
         return out
 
