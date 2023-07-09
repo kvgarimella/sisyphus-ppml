@@ -29,6 +29,20 @@ export DATASET_DIR=$(pwd)/data
 ```
 Follow the instructions in the `data` directory to download the datasets. We use [wandb](https://docs.wandb.ai/) to log our experiments. 
 
+## Citation
+
+If you find our work useful, kindly cite us with:
+```
+@inproceedings{garimella2021sisyphus,
+      author={Garimella, Karthik  and Jha, Nandan Kumar and Reagen, Brandon},
+      title={Sisyphus: A Cautionary Tale of Using Low-Degree
+      Polynomial Activations in Privacy-Preserving Deep Learning}, 
+      booktitle	= {ACM CCS Workshop on Private-preserving Machine Learning},
+      year={2021},
+      doi={10.48550/ARXIV.2107.12342}
+}
+```
+
 ## Example
 To run a baseline model, move to the `baselines` directory and run:
 ```
